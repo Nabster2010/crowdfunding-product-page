@@ -1,86 +1,76 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next";
+import { useState } from "react";
+import DescCard from "../src/components/DescCard";
+import Header from "../src/components/Header";
+import Modal from "../src/components/Modal";
+import MyButton from "../src/components/MyButton";
+import ProjectCard from "../src/components/ProjectCard";
+import StatsCard from "../src/components/StatsCard";
+import SuccessModal from "../src/components/SuccessModal";
 
 const Home: NextPage = () => {
+  const [bookMarked, setBookMarked] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  const [selectedRadio, setSelectedRadio] = useState(0);
+  const [totalBacked, setTotalBacked] = useState(37580);
+  const [totalBackers, setTotalBackers] = useState(5007);
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <div className="">
+        <Header />
+        {/* project section */}
+        <section className="flex space-y-8 flex-col justify-center items-center bg-offWhite pb-16 ">
+          <ProjectCard
+            bookMarked={bookMarked}
+            setBookMarked={setBookMarked}
+            setModalOpen={setModalOpen}
+            setSuccessModalOpen={setSuccessModalOpen}
+            successModalOpen={successModalOpen}
+            setSelectedRadio={setSelectedRadio}
+            modalOpen={modalOpen}
+            selectedRadio={selectedRadio}
+          />
+          <StatsCard totalBacked={totalBacked} totalBackers={totalBackers} />
+          <DescCard
+            setSelectedRadio={setSelectedRadio}
+            setModalOpen={setModalOpen}
+            modalOpen={modalOpen}
+          />
+          <SuccessModal show={successModalOpen} onClose={setSuccessModalOpen}>
+            <div className="flex flex-col justify-center items center p-4 space-y-4">
+              <svg
+                className="block self-center"
+                width="64"
+                height="64"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="none" fillRule="evenodd">
+                  <circle fill="#3CB3AB" cx="32" cy="32" r="32" />
+                  <path
+                    stroke="#FFF"
+                    strokeWidth="5"
+                    d="M20 31.86L28.093 40 44 24"
+                  />
+                </g>
+              </svg>
+              <h1 className="text-xl font font-extrabold text-center">
+                Thanks for your support!
+              </h1>
+              <p className="text-Darkgray text-center">
+                Your pledge brings us one step closer to sharing Mastercraft
+                Bamboo Monitor Riser worldwide. You will get an email once our
+                campaign is completed.
+              </p>
+              <MyButton onClick={() => setSuccessModalOpen(false)}>
+                Got it
+              </MyButton>
+            </div>
+          </SuccessModal>
+        </section>
+      </div>
+    </>
+  );
+};
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
-    </div>
-  )
-}
-
-export default Home
+export default Home;
