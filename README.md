@@ -1,27 +1,53 @@
-# Next.js + Tailwind CSS Example
+# Frontend Mentor - Crowdfunding product page solution
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This is a solution to the [Crowdfunding product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Deploy your own
+## Table of contents
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Overview
 
-## How to use
+### The challenge
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Users should be able to:
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+- View the optimal layout depending on their device's screen size
+- See hover states for interactive elements
+- Make a selection of which pledge to make
+- See an updated progress bar and total money raised based on their pledge total after confirming a pledge
+- See the number of total backers increment by one after confirming a pledge
+- Toggle whether or not the product is bookmarked
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+### Screenshot
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+![Alt desktop](./screenshots/desktop.png)
+![Alt mobile](./screenshots/mobile.png)
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Links
+
+- Solution URL: [github repo](https://github.com/Nabster2010/crowdfunding-product-page)
+- Live Site URL: [live site]()
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Nextjs
+- TypeScript
+- tailwindcss
+
+## Author
+
+- Frontend Mentor - [@Nabster2010](https://www.frontendmentor.io/profile/Nabster2010)
+- Twitter - [@yMahmoudElGarhey](https://www.twitter.com/MahmoudElGarhey)
