@@ -100,7 +100,7 @@ const ModalPricingCard = ({
                     name="pledge"
                     type={"number"}
                     value={value}
-                    onChange={(e) => setValue(e.target.value)}
+                    onChange={(e) => setValue(Number(e.target.value))}
                     placeholder="0:00"
                     className="w-full h-full outline-none rounded-full px-4 "
                   />
